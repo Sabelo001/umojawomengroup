@@ -137,14 +137,14 @@ function Home() {
         </div>
       </section>
 
-      {/* QUOTE */}
+      {/* PILLARS */}
       <section className="container-narrow py-20 md:py-28">
         <div className="max-w-3xl mx-auto text-center">
           <Quote className="w-10 h-10 text-primary/40 mx-auto mb-6" />
           <p className="font-display text-2xl md:text-4xl leading-snug text-foreground">
-            "We built Umoja so women could live with dignity. Visitors come, and they leave as friends of the community."
+            Dignity. Culture. Education. Hospitality.
           </p>
-          <p className="mt-6 text-sm uppercase tracking-widest text-muted-foreground">— The women of Umoja</p>
+          <p className="mt-6 text-sm uppercase tracking-widest text-muted-foreground">The work of Umoja Women Group</p>
         </div>
       </section>
 
