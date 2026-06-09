@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SupportRouteImport } from './routes/support'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LifestyleRouteImport } from './routes/lifestyle'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CampsiteRouteImport } from './routes/campsite'
@@ -20,6 +21,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const SupportRoute = SupportRouteImport.update({
   id: '/support',
   path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LifestyleRoute = LifestyleRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/campsite': typeof CampsiteRoute
   '/contact': typeof ContactRoute
   '/lifestyle': typeof LifestyleRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/campsite': typeof CampsiteRoute
   '/contact': typeof ContactRoute
   '/lifestyle': typeof LifestyleRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/campsite': typeof CampsiteRoute
   '/contact': typeof ContactRoute
   '/lifestyle': typeof LifestyleRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/campsite'
     | '/contact'
     | '/lifestyle'
+    | '/sitemap.xml'
     | '/support'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/campsite'
     | '/contact'
     | '/lifestyle'
+    | '/sitemap.xml'
     | '/support'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/campsite'
     | '/contact'
     | '/lifestyle'
+    | '/sitemap.xml'
     | '/support'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   CampsiteRoute: typeof CampsiteRoute
   ContactRoute: typeof ContactRoute
   LifestyleRoute: typeof LifestyleRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportRoute: typeof SupportRoute
 }
 
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/support'
       fullPath: '/support'
       preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lifestyle': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   CampsiteRoute: CampsiteRoute,
   ContactRoute: ContactRoute,
   LifestyleRoute: LifestyleRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportRoute: SupportRoute,
 }
 export const routeTree = rootRouteImport
