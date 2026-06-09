@@ -78,9 +78,10 @@ function Footer() {
         <div>
           <h4 className="text-sm uppercase tracking-widest text-ochre mb-4">Contact</h4>
           <ul className="space-y-3 text-sm text-cream/80">
-            <li className="flex gap-2.5"><MapPin className="w-4 h-4 mt-0.5 text-ochre shrink-0" /> Archer's Post, Samburu County, Kenya</li>
-            <li className="flex gap-2.5"><Mail className="w-4 h-4 mt-0.5 text-ochre shrink-0" /> info@umojawomen.or.ke</li>
-            <li className="flex gap-2.5"><Phone className="w-4 h-4 mt-0.5 text-ochre shrink-0" /> +254 700 000 000</li>
+            <li className="flex gap-2.5"><MapPin className="w-4 h-4 mt-0.5 text-ochre shrink-0" /><span>Archer's Post, Samburu County, Kenya</span></li>
+            <li className="flex gap-2.5"><Mail className="w-4 h-4 mt-0.5 text-ochre shrink-0" /><a href="mailto:witowetu@gmail.com" className="hover:text-ochre transition">witowetu@gmail.com</a></li>
+            <li className="flex gap-2.5"><Phone className="w-4 h-4 mt-0.5 text-ochre shrink-0" /><a href="tel:+254721659717" className="hover:text-ochre transition">+254 721 659 717</a></li>
+            <li className="flex gap-2.5"><Phone className="w-4 h-4 mt-0.5 text-ochre shrink-0" /><a href="tel:+254721333524" className="hover:text-ochre transition">+254 721 333 524</a></li>
           </ul>
         </div>
       </div>
