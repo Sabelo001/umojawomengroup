@@ -57,6 +57,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "A women-led Samburu community sharing culture, beadwork, education and warm hospitality in northern Kenya." },
       { property: "og:site_name", content: "Umoja Women Group" },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "Umoja Women Group — Samburu, Kenya" },
+      { name: "twitter:title", content: "Umoja Women Group — Samburu, Kenya" },
+      { property: "og:description", content: "A women-led Samburu community sharing culture, beadwork, education and warm hospitality in northern Kenya." },
+      { name: "twitter:description", content: "A women-led Samburu community sharing culture, beadwork, education and warm hospitality in northern Kenya." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/866cdc71-4148-4447-8cbe-4a8499c01a92" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/866cdc71-4148-4447-8cbe-4a8499c01a92" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
