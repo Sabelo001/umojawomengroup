@@ -32,18 +32,22 @@ function Contact() {
 
       <section className="container-narrow py-20 md:py-28 grid lg:grid-cols-12 gap-12">
         <aside className="lg:col-span-4 space-y-4">
-          {[
-            { icon: MapPin, title: "Find us", body: "Archer's Post, Samburu County, Kenya" },
-            { icon: Mail, title: "Email", body: "info@umojawomen.or.ke" },
-            { icon: Phone, title: "Phone / WhatsApp", body: "+254 700 000 000" },
-          ].map(({ icon: Icon, title, body }) => (
-            <div key={title} className="bg-card rounded-2xl p-6 border border-border">
-              <Icon className="w-5 h-5 text-primary mb-3" />
-              <h3 className="font-display text-lg mb-1">{title}</h3>
-              <p className="text-muted-foreground text-sm">{body}</p>
-            </div>
-          ))}
-          <p className="text-xs text-muted-foreground px-2">Contact details shown for prototype — confirm with the team before publishing.</p>
+          <div className="bg-card rounded-2xl p-6 border border-border">
+            <MapPin className="w-5 h-5 text-primary mb-3" />
+            <h3 className="font-display text-lg mb-1">Find us</h3>
+            <p className="text-muted-foreground text-sm">Archer's Post, Samburu County, Kenya</p>
+          </div>
+          <a href="tel:+254721659717" className="block bg-card rounded-2xl p-6 border border-border hover:border-primary/40 transition">
+            <Phone className="w-5 h-5 text-primary mb-3" />
+            <h3 className="font-display text-lg mb-1">Call or WhatsApp</h3>
+            <p className="text-muted-foreground text-sm">+254 721 659 717</p>
+            <p className="text-muted-foreground text-sm">+254 721 333 524</p>
+          </a>
+          <a href="mailto:witowetu@gmail.com" className="block bg-card rounded-2xl p-6 border border-border hover:border-primary/40 transition">
+            <Mail className="w-5 h-5 text-primary mb-3" />
+            <h3 className="font-display text-lg mb-1">Email</h3>
+            <p className="text-muted-foreground text-sm">witowetu@gmail.com</p>
+          </a>
         </aside>
 
         <div className="lg:col-span-8">
