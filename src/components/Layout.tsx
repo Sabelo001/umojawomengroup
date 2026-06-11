@@ -69,7 +69,7 @@ function Footer() {
         </div>
         <div>
           <h4 className="text-sm uppercase tracking-widest text-ochre mb-4">Explore</h4>
-          <ul className="space-y-2.5 text-sm text-cream/80">
+          <ul className="space-y-2.5 text-base text-cream/80">
             {nav.map((n) => (
               <li key={n.to}><Link to={n.to} className="hover:text-ochre transition">{n.label}</Link></li>
             ))}
@@ -77,7 +77,7 @@ function Footer() {
         </div>
         <div>
           <h4 className="text-sm uppercase tracking-widest text-ochre mb-4">Contact</h4>
-          <ul className="space-y-3 text-sm text-cream/80">
+          <ul className="space-y-3 text-base text-cream/80">
             <li className="flex gap-2.5"><MapPin className="w-4 h-4 mt-0.5 text-ochre shrink-0" /><span>Archer's Post, Samburu County, Kenya</span></li>
             <li className="flex gap-2.5"><Mail className="w-4 h-4 mt-0.5 text-ochre shrink-0" /><a href="mailto:witowetu@gmail.com" className="hover:text-ochre transition">witowetu@gmail.com</a></li>
             <li className="flex gap-2.5"><Phone className="w-4 h-4 mt-0.5 text-ochre shrink-0" /><a href="tel:+254721659717" className="hover:text-ochre transition">+254 721 659 717</a></li>
@@ -86,8 +86,8 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-cream/10">
-        <div className="container-narrow py-6 text-xs text-cream/50 flex flex-col md:flex-row gap-2 md:justify-between">
-          <span>© {new Date().getFullYear()} Umoja Uaso Women Group. All rights reserved.</span>
+        <div className="container-narrow py-6 text-sm text-cream/50 flex flex-col md:flex-row gap-2 md:justify-between">
+          <span>© {new Date().getFullYear()} Umoja Women Group. All rights reserved.</span>
           <span>Where women lead, culture lives.</span>
         </div>
       </div>
