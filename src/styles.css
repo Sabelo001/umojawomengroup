@@ -34,7 +34,7 @@
   --color-cream: var(--cream);
   --color-charcoal: var(--charcoal);
   --color-sky-soft: var(--sky-soft);
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
