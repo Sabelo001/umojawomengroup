@@ -36,9 +36,9 @@ function Home() {
             Umoja Women Group is a women-led community in Samburu, Kenya, sharing a story of dignity, resilience, culture, education, beadwork and hospitality.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full hover:bg-primary/90 transition font-medium">
+            <a href="https://wa.me/254721659717?text=Hello%20Umoja%2C%20I%27d%20like%20to%20plan%20a%20visit." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full hover:bg-primary/90 transition font-medium">
               Visit Umoja <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
             <Link to="/support" className="inline-flex items-center gap-2 border border-cream/40 text-cream px-7 py-3.5 rounded-full hover:bg-cream/10 transition">
               Support the Work
             </Link>
