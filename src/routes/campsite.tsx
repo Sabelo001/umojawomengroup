@@ -22,7 +22,7 @@ const features = [
   { icon: Home, title: "Self-contained cottages", body: "Ten cottages on a 14-acre site, hosting up to 21 guests in full capacity." },
   { icon: Tent, title: "Camping & parking", body: "Ample camping ground and parking — suitable for larger groups." },
   { icon: Utensils, title: "Restaurant & catering", body: "Round-the-clock reception with restaurant and catering on request." },
-  { icon: Compass, title: "Cultural & wildlife area", body: "A short drive from Samburu and Buffalo Springs reserves; cultural visits arranged with the community." },
+  { icon: Compass, title: "Culture & nearby reserves", body: "A short drive from Samburu and Buffalo Springs reserves; cultural visits arranged with the community." },
 ];
 
 function Campsite() {
@@ -74,7 +74,9 @@ function Campsite() {
           <p className="text-foreground/80 text-lg leading-relaxed mb-4">
             Send us a note with your travel dates, group size and what you'd like to experience. The team will respond with availability, rates and travel suggestions.
           </p>
-          <p className="text-sm text-muted-foreground italic mb-8">Rates and availability to be confirmed by the team.</p>
+          <p className="text-foreground/80 text-lg leading-relaxed mb-4">
+            All bookings and visit arrangements are confirmed directly by the Umoja team.
+          </p>
           <a href="https://wa.me/254721659717?text=Hello%20Umoja%2C%20I%27d%20like%20to%20enquire%20about%20the%20campsite." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full hover:bg-primary/90 transition font-medium">
             Send a booking enquiry <ArrowRight className="w-4 h-4" />
           </a>

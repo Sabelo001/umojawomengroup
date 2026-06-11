@@ -32,7 +32,7 @@ function About() {
       <PageHero
         eyebrow="About Umoja"
         title="A community built by women, sustained by a shared purpose."
-        intro="Founded in 1990 in the plains of Samburu, Umoja has grown into a self-governed village known across Kenya and beyond."
+        intro="Founded in 1990 in the plains of Samburu, Umoja has grown into a women-led community known by many visitors, partners, and supporters in Kenya and beyond."
         image={womenWalking.url}
       />
 

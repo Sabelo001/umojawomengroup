@@ -18,7 +18,7 @@ export const Route = createFileRoute("/support")({
 });
 
 const areas = [
-  { icon: GraduationCap, title: "Education", body: "Help fund places at Umoja Academy — school fees, meals, books and learning materials." },
+  { icon: GraduationCap, title: "Education", body: "Support learning needs at Umoja Academy, including meals, books, and learning materials." },
   { icon: Gem, title: "Beadwork enterprise", body: "Buy directly from the women, commission work, or help build market access for the cooperative." },
   { icon: Users, title: "Women's programmes", body: "Support training, leadership and health initiatives for women in the community." },
   { icon: Wrench, title: "Community infrastructure", body: "Water, sanitation, shelter and the everyday upkeep of village life." },
@@ -30,7 +30,7 @@ function Support() {
       <PageHero
         eyebrow="Support"
         title="Stand with the women of Umoja."
-        intro="Your support — whether time, partnership, or contribution — keeps this community strong."
+        intro="Your support, whether through partnership, visits, beadwork purchases, or community assistance, helps strengthen the work of Umoja."
         image={beadwork.url}
       />
 

@@ -29,7 +29,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/30 to-charcoal/85" />
         <div className="relative container-narrow pb-16 md:pb-24 pt-32 text-cream">
           <p className="text-ochre text-xs uppercase tracking-[0.25em] font-semibold mb-6">Samburu, Northern Kenya</p>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[1.02] max-w-4xl">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[1.08] max-w-4xl">
             Where women lead, <span className="italic text-ochre">culture lives</span>, and visitors are welcomed.
           </h1>
           <p className="mt-7 text-base md:text-lg text-cream/85 max-w-2xl leading-relaxed">
@@ -68,7 +68,7 @@ function Home() {
       <section className="container-narrow pb-20 md:pb-28">
         <div className="grid md:grid-cols-3 gap-5 md:gap-6">
           {[
-            { icon: Users, title: "Women-led community", body: "A self-governed village where women hold leadership, voice and ownership." },
+            { icon: Users, title: "Women-led community", body: "A women-led community where women hold leadership, voice and ownership." },
             { icon: Sparkles, title: "Samburu culture & beadwork", body: "Living traditions: songs, dress, ceremony and beadwork made by hand." },
             { icon: Tent, title: "Campsite & visitor experience", body: "Cottages, camping and cultural visits along the Ewaso Nyiro river." },
           ].map(({ icon: Icon, title, body }) => (
