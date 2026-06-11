@@ -34,7 +34,7 @@
   --color-cream: var(--cream);
   --color-charcoal: var(--charcoal);
   --color-sky-soft: var(--sky-soft);
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
@@ -78,8 +78,13 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  h1, h2, h3, h4, .font-display { font-family: var(--font-display); letter-spacing: -0.01em; }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-feature-settings: "liga" 1, "kern" 1, "dlig" 1;
+  }
 }
 
 @layer utilities {
