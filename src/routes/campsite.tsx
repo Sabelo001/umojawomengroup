@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PageHero } from "@/components/Layout";
 import { Home, Utensils, Tent, Compass, ArrowRight } from "lucide-react";
 import manyatta1 from "@/assets/manyatta-1.asset.json";
