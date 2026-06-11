@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PageHero } from "@/components/Layout";
 import { Home, Utensils, Tent, Compass, ArrowRight } from "lucide-react";
 import manyatta1 from "@/assets/manyatta-1.asset.json";
@@ -75,9 +75,9 @@ function Campsite() {
             Send us a note with your travel dates, group size and what you'd like to experience. The team will respond with availability, rates and travel suggestions.
           </p>
           <p className="text-sm text-muted-foreground italic mb-8">Rates and availability to be confirmed by the team.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full hover:bg-primary/90 transition font-medium">
+          <a href="https://wa.me/254721659717?text=Hello%20Umoja%2C%20I%27d%20like%20to%20enquire%20about%20the%20campsite." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full hover:bg-primary/90 transition font-medium">
             Send a booking enquiry <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </section>
     </Layout>

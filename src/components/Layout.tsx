@@ -30,9 +30,9 @@ function Header() {
               {n.label}
             </Link>
           ))}
-          <Link to="/contact" className="text-sm bg-primary text-primary-foreground px-5 py-2.5 rounded-full hover:bg-primary/90 transition">
+          <a href="https://wa.me/254721659717?text=Hello%20Umoja%2C%20I%27d%20like%20to%20book%20a%20visit." target="_blank" rel="noopener noreferrer" className="text-sm bg-primary text-primary-foreground px-5 py-2.5 rounded-full hover:bg-primary/90 transition">
             Book a Visit
-          </Link>
+          </a>
         </nav>
         <button className="lg:hidden p-2 -mr-2" onClick={() => setOpen((v) => !v)} aria-label="Menu">
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
