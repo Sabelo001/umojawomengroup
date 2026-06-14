@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, PageHero } from "@/components/Layout";
-import { BookOpen, Utensils, Droplets, ShieldCheck, ArrowRight } from "lucide-react";
+import { BookOpen, Utensils, Droplets, ShieldCheck, Bus, ArrowRight } from "lucide-react";
 import rebecca from "@/assets/rebecca.asset.json";
 
 export const Route = createFileRoute("/academy")({
@@ -22,15 +22,17 @@ const pillars = [
   { icon: Utensils, title: "School Meals", body: "A daily food programme helps children stay in school and focus on learning." },
   { icon: Droplets, title: "Water & Sanitation", body: "Clean water access and sanitation facilities support the school, village, gardens, and campsite." },
   { icon: ShieldCheck, title: "Safe School Environment", body: "Organised learning spaces, sanitation, storage, and community care around every child." },
+  { icon: Bus, title: "Safe Access to School", body: "Transport support helps reduce risks for children who travel from surrounding areas." },
 ];
 
 const facilities = [
   "Classrooms and school infrastructure",
   "Toilets and sanitation facilities",
   "Water desalination & clean water system",
+  "Shower bathrooms",
   "Food store",
   "Power connection",
-  "Future needs: library, hall, fencing, boarding support",
+  "Learner storage lockers",
 ];
 
 function Academy() {
@@ -59,7 +61,7 @@ function Academy() {
             <p className="eyebrow mb-4">What the academy supports</p>
             <h2 className="font-display text-3xl md:text-4xl leading-tight">Four foundations that hold the school together.</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {pillars.map(({ icon: Icon, title, body }) => (
               <div key={title} className="bg-card rounded-2xl p-6 border border-border">
                 <Icon className="w-6 h-6 text-primary mb-4" />
