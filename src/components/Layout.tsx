@@ -6,8 +6,8 @@ const nav = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/lifestyle", label: "Lifestyle & Culture" },
-  { to: "/campsite", label: "Campsite" },
-  { to: "/academy", label: "Academy" },
+  { to: "/campsite", label: "Umoja Campsite" },
+  { to: "/academy", label: "Umoja Muehlbauer Academy" },
   { to: "/support", label: "Support" },
   { to: "/contact", label: "Visit" },
 ];
