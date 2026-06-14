@@ -52,6 +52,12 @@ function Academy() {
           <p className="text-foreground/80 text-lg leading-relaxed">
             Umoja Muehlbauer Academy was created to give children from Umoja and nearby settlements a safer, closer place to learn. It continues to grow through the work of the women of Umoja, teachers, parents, and friends of the community.
           </p>
+          <div className="mt-10 rounded-2xl border border-border bg-card p-6 md:p-8">
+            <p className="eyebrow mb-3">Academy history</p>
+            <p className="text-foreground/80 leading-relaxed">
+              The academy was launched in May 2014 and has grown over the years with the support of partners, including the Muehlbauer Foundation, alongside the ongoing commitment of the Umoja community.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -59,7 +65,7 @@ function Academy() {
         <div className="container-narrow py-20 md:py-24">
           <div className="max-w-2xl mb-12">
             <p className="eyebrow mb-4">What the academy supports</p>
-            <h2 className="font-display text-3xl md:text-4xl leading-tight">Four foundations that hold the school together.</h2>
+            <h2 className="font-display text-3xl md:text-4xl leading-tight">Five foundations that hold the school together.</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {pillars.map(({ icon: Icon, title, body }) => (
