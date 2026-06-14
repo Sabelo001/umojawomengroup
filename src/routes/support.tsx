@@ -18,7 +18,7 @@ export const Route = createFileRoute("/support")({
 });
 
 const areas = [
-  { icon: GraduationCap, title: "Education", body: "Support learning needs at Umoja Academy, including meals, books, and learning materials." },
+  { icon: GraduationCap, title: "Education", body: "Support learning needs at Umoja Muehlbauer Academy, including meals, books, and learning materials." },
   { icon: Gem, title: "Beadwork enterprise", body: "Buy directly from the women, commission work, or help build market access for the cooperative." },
   { icon: Users, title: "Women's programmes", body: "Support training, leadership and health initiatives for women in the community." },
   { icon: Wrench, title: "Community infrastructure", body: "Water, sanitation, shelter and the everyday upkeep of village life." },
