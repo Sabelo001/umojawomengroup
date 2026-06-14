@@ -24,7 +24,7 @@ function Header() {
             <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Women Group</span>
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
           {nav.slice(0, -1).map((n) => (
             <Link key={n.to} to={n.to} className="text-sm text-charcoal/80 hover:text-primary transition-colors [&.active]:text-primary [&.active]:font-medium">
               {n.label}
