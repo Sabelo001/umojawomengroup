@@ -21,7 +21,7 @@ export const Route = createFileRoute("/about")({
 const values = [
   { icon: Shield, title: "Dignity", body: "Every woman, child and visitor is received with respect." },
   { icon: Heart, title: "Safety", body: "A community where women and children feel protected and heard." },
-  { icon: GraduationCap, title: "Education", body: "Investing in the next generation through Umoja Academy." },
+  { icon: GraduationCap, title: "Education", body: "Investing in the next generation through Umoja Muehlbauer Academy." },
   { icon: Sparkles, title: "Culture", body: "Carrying Samburu traditions forward — in song, dress and craft." },
   { icon: Handshake, title: "Enterprise", body: "Building livelihoods through beadwork and hospitality." },
 ];

@@ -87,7 +87,7 @@ function Home() {
       <section className="bg-secondary/60">
         <div className="container-narrow py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div>
-            <p className="eyebrow mb-4">Umoja Academy</p>
+            <p className="eyebrow mb-4">Umoja Muehlbauer Academy</p>
             <h2 className="font-display text-3xl md:text-5xl leading-tight mb-6">Learning rooted in community.</h2>
             <p className="text-foreground/80 text-lg leading-relaxed mb-8">
               The academy gives children from Umoja and the surrounding settlements a safe place to learn, eat and grow — supported by the women who built this community.
