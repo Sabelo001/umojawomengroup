@@ -50,6 +50,29 @@ function Support() {
         </div>
       </section>
 
+      <section className="bg-secondary/60">
+        <div className="container-narrow py-20 md:py-24">
+          <div className="max-w-2xl mb-10">
+            <p className="eyebrow mb-4">Current & future needs</p>
+            <h2 className="font-display text-3xl md:text-4xl leading-tight">Where ongoing support is most welcome.</h2>
+          </div>
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[
+              "Administration block",
+              "School fence and gates",
+              "Library",
+              "Multipurpose hall",
+              "Boarding support",
+              "School meals",
+              "Books and learning materials",
+              "Water and sanitation support",
+            ].map((x) => (
+              <li key={x} className="bg-card rounded-xl p-5 border border-border text-foreground/85">{x}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="container-narrow pb-24">
         <div className="rounded-3xl bg-primary text-primary-foreground p-10 md:p-16 grid md:grid-cols-2 gap-8 items-center">
           <div>
