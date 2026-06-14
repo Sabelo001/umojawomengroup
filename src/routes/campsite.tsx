@@ -94,6 +94,26 @@ function Campsite() {
         </div>
       </section>
 
+      <section className="container-narrow py-20 md:py-24">
+        <div className="max-w-2xl mb-10">
+          <p className="eyebrow mb-4">Experiences from the campsite</p>
+          <h2 className="font-display text-3xl md:text-4xl leading-tight">Things to do and places to discover.</h2>
+        </div>
+        <ul className="grid sm:grid-cols-2 gap-3">
+          {[
+            "Riverside restaurant and bar area",
+            "Game drives and wildlife experiences nearby",
+            "Samburu cultural visits",
+            "Buffalo Springs and Samburu National Reserve access",
+            "Quiet base for Archer's Post and the wider Samburu route",
+          ].map((x) => (
+            <li key={x} className="bg-card rounded-xl p-5 border border-border text-foreground/85">{x}</li>
+          ))}
+        </ul>
+      </section>
+
+
+
       <section className="container-narrow py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
         <div className="aspect-[4/5] rounded-2xl overflow-hidden">
           <img src={tent.url} alt="Inside a tented room at Umoja Campsite" className="w-full h-full object-cover" />
