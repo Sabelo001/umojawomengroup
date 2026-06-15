@@ -10,7 +10,7 @@ export const Route = createFileRoute("/academy")({
       { name: "description", content: "Umoja Muehlbauer Academy supports children from Umoja and surrounding settlements with learning, meals, water and a safe school environment." },
       { property: "og:title", content: "Umoja Muehlbauer Academy" },
       { property: "og:description", content: "An education initiative rooted in the Umoja community." },
-      { property: "og:image", content: rebecca.url },
+      { property: "og:image", content: umojaschool.url },
     ],
     links: [{ rel: "canonical", href: "/academy" }],
   }),
