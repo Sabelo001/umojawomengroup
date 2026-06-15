@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, PageHero } from "@/components/Layout";
 import { BookOpen, Utensils, Droplets, ShieldCheck, Bus, ArrowRight } from "lucide-react";
-import rebecca from "@/assets/rebecca.asset.json";
+import umojaschool from "@/assets/umojaschool.webp.asset.json";
 
 export const Route = createFileRoute("/academy")({
   head: () => ({
