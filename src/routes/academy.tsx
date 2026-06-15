@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, PageHero } from "@/components/Layout";
 import { BookOpen, Utensils, Droplets, ShieldCheck, Bus, ArrowRight } from "lucide-react";
-import rebecca from "@/assets/rebecca.asset.json";
+import umojaschool from "@/assets/umojaschool.webp.asset.json";
 
 export const Route = createFileRoute("/academy")({
   head: () => ({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/academy")({
       { name: "description", content: "Umoja Muehlbauer Academy supports children from Umoja and surrounding settlements with learning, meals, water and a safe school environment." },
       { property: "og:title", content: "Umoja Muehlbauer Academy" },
       { property: "og:description", content: "An education initiative rooted in the Umoja community." },
-      { property: "og:image", content: rebecca.url },
+      { property: "og:image", content: umojaschool.url },
     ],
     links: [{ rel: "canonical", href: "/academy" }],
   }),
@@ -42,7 +42,7 @@ function Academy() {
         eyebrow="Umoja Muehlbauer Academy"
         title="Education rooted in community."
         intro="Umoja Muehlbauer Academy supports children from Umoja and surrounding settlements with learning, meals, safe water, and a school environment built around dignity and opportunity."
-        image={rebecca.url}
+        image={umojaschool.url}
       />
 
       <section className="container-narrow py-20 md:py-28">
