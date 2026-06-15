@@ -109,7 +109,7 @@ export function PageHero({ eyebrow, title, intro, image }: { eyebrow: string; ti
   return (
     <section className="relative">
       <div className="absolute inset-0">
-        <img src={image} alt="" className="w-full h-full object-cover" />
+        <img src={image} alt="" className="w-full h-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/55 to-charcoal/80" />
       </div>
       <div className="relative container-narrow py-24 md:py-36 text-cream">
