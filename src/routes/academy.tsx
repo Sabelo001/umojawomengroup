@@ -42,7 +42,7 @@ function Academy() {
         eyebrow="Umoja Muehlbauer Academy"
         title="Education rooted in community."
         intro="Umoja Muehlbauer Academy supports children from Umoja and surrounding settlements with learning, meals, safe water, and a school environment built around dignity and opportunity."
-        image={rebecca.url}
+        image={umojaschool.url}
       />
 
       <section className="container-narrow py-20 md:py-28">
