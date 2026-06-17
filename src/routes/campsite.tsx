@@ -44,7 +44,7 @@ function WhatsAppCTA({ light = false }: { light?: boolean }) {
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-medium hover:bg-primary/90 transition"
       >
-        <MessageCircle className="w-4 h-4" /> Book on WhatsApp
+        <WhatsAppIcon className="w-4 h-4" /> Book on WhatsApp
       </a>
       <p className={`mt-3 text-sm ${light ? "text-cream/80" : "text-muted-foreground"}`}>
         Send your travel dates, group size, and preferred stay option.
