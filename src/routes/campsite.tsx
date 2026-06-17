@@ -59,7 +59,7 @@ function Campsite() {
       <section className="relative">
         <div className="absolute inset-0">
           <img src={riverside.url} alt="Umoja Campsite terrace overlooking the Ewaso Nyiro river" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/55 to-charcoal/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/75 via-charcoal/70 to-charcoal/85" />
         </div>
         <div className="relative container-narrow py-24 md:py-36 text-cream">
           <p className="text-ochre text-xs uppercase tracking-[0.22em] font-semibold mb-5">Umoja Campsite</p>
