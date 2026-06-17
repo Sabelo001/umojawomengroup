@@ -63,10 +63,10 @@ function Campsite() {
         </div>
         <div className="relative container-narrow py-24 md:py-36 text-cream">
           <p className="text-ochre text-xs uppercase tracking-[0.22em] font-semibold mb-5">Umoja Campsite</p>
-          <h1 className="font-display text-4xl md:text-6xl leading-[1.05] max-w-3xl">A riverside stay in the heart of Samburu.</h1>
-          <p className="mt-6 text-cream/85 max-w-2xl text-lg leading-relaxed">
-            Set along the Ewaso Nyiro in Archer's Post, Umoja Campsite is a simple, warm, community-owned place to rest between wildlife, culture, and the open road.
-          </p>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.1] md:leading-[1.05] max-w-3xl text-balance">A riverside stay in the heart of Samburu.</h1>
+            <p className="mt-6 text-cream/85 max-w-2xl text-lg leading-relaxed text-balance">
+              Set along the Ewaso Nyiro in Archer's Post, Umoja Campsite is a simple, warm, community-owned place to rest between wildlife, culture, and the open road.
+            </p>
           <div className="mt-8">
             <WhatsAppCTA light />
           </div>
