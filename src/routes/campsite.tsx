@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Layout, PageHero } from "@/components/Layout";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Layout, SafeImage } from "@/components/Layout";
 import { Home, Utensils, Tent, Compass, ArrowRight } from "lucide-react";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -17,11 +17,10 @@ const WHATSAPP_BOOK = "https://wa.me/254721659717?text=Hello%20Umoja%20Campsite%
 export const Route = createFileRoute("/campsite")({
   head: () => ({
     meta: [
-      { title: "Umoja Campsite — Stay in Archer's Post, Samburu" },
-      { name: "description", content: "A community-owned riverside stay in Archer's Post with cottages, camping, restaurant and access to Samburu's wildlife and culture." },
-      { property: "og:title", content: "Umoja Campsite — Samburu, Kenya" },
-      { property: "og:description", content: "Cottages, camping, food and cultural visits at Umoja Campsite, Archer's Post." },
-      { property: "og:image", content: riverside.url },
+      { title: "Umoja Campsite | Stay in Archer's Post, Samburu" },
+      { name: "description", content: "A simple, community-owned riverside stay in Archer's Post with cottages, camping space, meals, cultural visits, and easy access to Samburu and Buffalo Springs." },
+      { property: "og:title", content: "Umoja Campsite | Samburu, Kenya" },
+      { property: "og:description", content: "Community-owned cottages, camping space, meals, and cultural visits at Umoja Campsite in Archer's Post." },
     ],
     links: [{ rel: "canonical", href: "/campsite" }],
   }),
@@ -29,20 +28,30 @@ export const Route = createFileRoute("/campsite")({
 });
 
 const features = [
-  { icon: Home, title: "Cottages", body: "Simple, comfortable cottages set on the campsite grounds — restful after a day on the road." },
-  { icon: Tent, title: "Camping & parking", body: "Open camping ground and ample parking — well suited to overland travellers and groups." },
-  { icon: Utensils, title: "Restaurant & catering", body: "On-site restaurant with home-cooked meals; catering available on request." },
-  { icon: Compass, title: "Culture & nearby reserves", body: "A short drive from Samburu and Buffalo Springs reserves; cultural visits arranged with the community." },
+  { icon: Home, title: "Cottages", body: "Simple, comfortable rooms on the Umoja Campsite grounds, restful after a day on the road." },
+  { icon: Tent, title: "Camping & parking", body: "Open camping space and ample parking, well suited to overland travellers, groups, and self-drive visitors." },
+  { icon: Utensils, title: "Restaurant & catering", body: "Meals are available on site, with catering arranged directly through the Umoja team." },
+  { icon: Compass, title: "Culture & nearby reserves", body: "Cultural visits can be arranged with the community, with Samburu and Buffalo Springs nearby." },
+];
+
+const nearbyImages = [
+  { src: "/images/campsite/samburu-national-reserve-gate.jpg", alt: "Samburu National Reserve gate near Archer's Post", label: "Nearby reserve access" },
+  { src: "/images/campsite/game-drive-zebras.jpg", alt: "Zebras in the wider Samburu reserve landscape", label: "Reserve landscapes" },
+  { src: "/images/campsite/reticulated-giraffes.jpg", alt: "Reticulated giraffes in a nearby reserve landscape", label: "Nearby wildlife routes" },
+  { src: "/images/campsite/leopard-safari-wildlife.jpg", alt: "Wildlife photographed in the wider Samburu reserve area", label: "Seasonal sightings nearby" },
+  { src: "/images/campsite/samburu-antelope-wildlife.jpg", alt: "Antelope in the wider Samburu reserve area", label: "Samburu wildlife areas" },
+  { src: "/images/campsite/samburu-oryx-wildlife.jpg", alt: "Oryx in the wider Samburu reserve area", label: "Dryland wildlife areas" },
+  { src: "/images/campsite/samburu-ostrich-wildlife.jpg", alt: "Ostrich in the wider Samburu reserve area", label: "Nearby reserve birdlife" },
 ];
 
 function WhatsAppCTA({ light = false }: { light?: boolean }) {
   return (
-    <div className={light ? "" : ""}>
+    <div>
       <a
         href={WHATSAPP_BOOK}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-medium hover:bg-primary/90 transition"
+        className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-medium hover:bg-primary/90 transition"
       >
         <WhatsAppIcon className="w-4 h-4" /> Book on WhatsApp
       </a>
@@ -56,17 +65,17 @@ function WhatsAppCTA({ light = false }: { light?: boolean }) {
 function Campsite() {
   return (
     <Layout>
-      <section className="relative">
+      <section className="image-fill-polish-wrap relative overflow-hidden bg-charcoal">
         <div className="absolute inset-0">
-          <img src={riverside.url} alt="Umoja Campsite terrace overlooking the Ewaso Nyiro river" className="w-full h-full object-cover" />
+          <SafeImage src={riverside.url} alt="Ewaso Nyiro river sunset near Umoja Campsite" className="image-fill-polish w-full h-full object-cover" loading="eager" fetchPriority="high" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal/75 via-charcoal/70 to-charcoal/85" />
         </div>
         <div className="relative container-narrow py-24 md:py-36 text-cream">
           <p className="text-ochre text-xs uppercase tracking-[0.22em] font-semibold mb-5">Umoja Campsite</p>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.1] md:leading-[1.05] max-w-3xl text-balance">A riverside stay in the heart of Samburu.</h1>
-            <p className="mt-6 text-cream/85 max-w-2xl text-lg leading-relaxed text-balance">
-              Set along the Ewaso Nyiro in Archer's Post, Umoja Campsite is a simple, warm, community-owned place to rest between wildlife, culture, and the open road.
-            </p>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.1] md:leading-[1.05] max-w-3xl text-balance">A simple riverside stay in Archer's Post.</h1>
+          <p className="mt-6 text-cream/85 max-w-2xl text-lg leading-relaxed text-balance">
+            Community-owned hospitality beside the Ewaso Nyiro, with cottages, camping space, meals, and cultural experiences arranged through the Umoja team.
+          </p>
           <div className="mt-8">
             <WhatsAppCTA light />
           </div>
@@ -76,15 +85,15 @@ function Campsite() {
       <section className="container-narrow py-20 md:py-28">
         <div className="grid md:grid-cols-12 gap-10 items-start">
           <div className="md:col-span-5">
-            <p className="eyebrow mb-4">The setting</p>
-            <h2 className="font-display text-3xl md:text-5xl leading-tight">Between two reserves, beside a flowing river.</h2>
+            <p className="eyebrow mb-4">Community-owned hospitality</p>
+            <h2 className="font-display text-3xl md:text-5xl leading-tight">A quiet base for Samburu, Buffalo Springs, culture, and the northern route.</h2>
           </div>
           <div className="md:col-span-7 space-y-5 text-foreground/80 text-lg leading-relaxed">
             <p>
-              Umoja Campsite sits along the Ewaso Nyiro, a short distance from Archer's Post town centre. Buffalo Springs National Reserve lies just across the river, and Samburu National Reserve is a short drive away.
+              Umoja Campsite sits along the Ewaso Nyiro, a short distance from Archer's Post town centre. It is a practical, welcoming base for travellers, groups, overlanders, volunteers, cultural visitors, and guests exploring Samburu.
             </p>
             <p>
-              It is owned and run by the women of Umoja — every stay supports the community directly.
+              Buffalo Springs National Reserve lies just across the river, and Samburu National Reserve is a short drive away. The campsite is owned and run by the women of Umoja, so every stay supports the community directly.
             </p>
           </div>
         </div>
@@ -104,42 +113,55 @@ function Campsite() {
 
       <section className="container-narrow py-20 md:py-24">
         <div className="max-w-2xl mb-10">
-          <p className="eyebrow mb-4">Experiences from the campsite</p>
-          <h2 className="font-display text-3xl md:text-4xl leading-tight">Things to do and places to discover.</h2>
+          <p className="eyebrow mb-4">Nearby experiences</p>
+          <h2 className="font-display text-3xl md:text-4xl leading-tight">A calm base for the wider Samburu route.</h2>
         </div>
         <ul className="grid sm:grid-cols-2 gap-3">
           {[
-            "Riverside restaurant and bar area",
-            "Game drives and wildlife experiences nearby",
-            "Samburu cultural visits",
-            "Buffalo Springs and Samburu National Reserve access",
-            "Quiet base for Archer's Post and the wider Samburu route",
+            "Riverside meals and rest stops",
+            "Nearby game drives arranged locally",
+            "Samburu cultural visits with the community",
+            "Access to Buffalo Springs and Samburu National Reserve",
+            "A quiet base for Archer's Post and the northern route",
           ].map((x) => (
             <li key={x} className="bg-card rounded-xl p-5 border border-border text-foreground/85">{x}</li>
           ))}
         </ul>
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {nearbyImages.map((image) => (
+            <figure key={image.src} className="overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="image-polish aspect-[4/3] bg-sand">
+                <SafeImage src={image.src} alt={image.alt} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <figcaption className="p-4 text-sm text-muted-foreground">{image.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Nearby wildlife and reserve experiences depend on route, season, and local arrangements.
+        </p>
       </section>
 
 
 
       <section className="container-narrow py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
-        <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-          <img src={tent.url} alt="Inside a tented room at Umoja Campsite" className="w-full h-full object-cover" />
+        <div className="image-polish aspect-[4/5] rounded-2xl overflow-hidden bg-sand">
+          <SafeImage src={tent.url} alt="A simple room at Umoja Campsite" className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div>
           <p className="eyebrow mb-4">Plan your stay</p>
-          <h2 className="font-display text-3xl md:text-5xl leading-tight mb-6">Rates and availability on enquiry.</h2>
+          <h2 className="font-display text-3xl md:text-5xl leading-tight mb-6">Plan your stay with the Umoja team.</h2>
           <p className="text-foreground/80 text-lg leading-relaxed mb-4">
-            Send us a note with your travel dates, group size and what you'd like to experience. The team will respond with availability, rates and travel suggestions.
+            Send your travel dates, group size, and preferred stay style. Rates and availability are confirmed directly by the team.
           </p>
           <p className="text-foreground/80 text-lg leading-relaxed mb-6">
-            All bookings and visit arrangements are confirmed directly by the Umoja team.
+            Bookings, meals, cultural visits, and local suggestions are arranged through Umoja.
           </p>
           <WhatsAppCTA />
           <div className="mt-5">
-            <a href={WHATSAPP_BOOK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-medium hover:underline">
-              Or send a detailed enquiry <ArrowRight className="w-4 h-4" />
-            </a>
+            <Link to="/contact" className="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+              Send an enquiry <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

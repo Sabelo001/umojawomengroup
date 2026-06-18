@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
+import { useState, type ImgHTMLAttributes, type ReactNode } from "react";
 import { Menu, X, Mail, Phone, MapPin } from "lucide-react";
+
+const BOOK_VISIT_URL = "https://wa.me/254721659717?text=Hello%20Umoja%2C%20I%27d%20like%20to%20book%20a%20visit.";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -20,32 +22,35 @@ function Header() {
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <span className="w-9 h-9 rounded-full bg-primary text-primary-foreground grid place-items-center font-display text-lg">U</span>
           <span className="flex flex-col leading-tight">
-            <span className="font-display text-lg text-foreground">Umoja</span>
-            <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Women Group</span>
+            <span className="font-display text-base sm:text-lg text-foreground">Umoja Women Group</span>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Samburu, Kenya</span>
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+        <nav className="hidden xl:flex items-center gap-4 2xl:gap-6">
           {nav.slice(0, -1).map((n) => (
-            <Link key={n.to} to={n.to} className="text-sm text-charcoal/80 hover:text-primary transition-colors [&.active]:text-primary [&.active]:font-medium">
+            <Link key={n.to} to={n.to} className="nav-link text-sm text-charcoal/80 hover:text-primary [&.active]:text-primary [&.active]:font-medium">
               {n.label}
             </Link>
           ))}
-          <a href="https://wa.me/254721659717?text=Hello%20Umoja%2C%20I%27d%20like%20to%20book%20a%20visit." target="_blank" rel="noopener noreferrer" className="text-sm bg-primary text-primary-foreground px-5 py-2.5 rounded-full hover:bg-primary/90 transition">
+          <a href={BOOK_VISIT_URL} target="_blank" rel="noopener noreferrer" className="text-sm bg-primary text-primary-foreground px-5 py-2.5 rounded-full hover:bg-primary/90 transition">
             Book a Visit
           </a>
         </nav>
-        <button className="lg:hidden p-2 -mr-2" onClick={() => setOpen((v) => !v)} aria-label="Menu">
+        <button className="xl:hidden min-h-11 min-w-11 p-2 -mr-2 grid place-items-center" onClick={() => setOpen((v) => !v)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="xl:hidden border-t border-border bg-background">
           <div className="container-narrow py-4 flex flex-col gap-1">
             {nav.map((n) => (
               <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="py-3 text-foreground/90 border-b border-border/40 last:border-0 [&.active]:text-primary">
                 {n.label}
               </Link>
             ))}
+            <a href={BOOK_VISIT_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="mt-3 inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition">
+              Book a Visit
+            </a>
           </div>
         </div>
       )}
@@ -64,7 +69,7 @@ function Footer() {
             <span className="font-display text-xl">Umoja Women Group</span>
           </div>
           <p className="text-cream/70 text-sm leading-relaxed">
-            A women-led Samburu community in northern Kenya — known for dignity, culture, beadwork, education and warm hospitality.
+            A women-led Samburu community in northern Kenya, known for dignity, culture, beadwork, education and warm hospitality.
           </p>
         </div>
         <div>
@@ -105,16 +110,24 @@ export function Layout({ children }: { children: ReactNode }) {
   );
 }
 
+export function SafeImage({ src, ...props }: ImgHTMLAttributes<HTMLImageElement>) {
+  const source = typeof src === "string" ? src : "";
+
+  if (!source) return null;
+
+  return <img src={source} {...props} />;
+}
+
 export function PageHero({ eyebrow, title, intro, image }: { eyebrow: string; title: string; intro?: string; image: string }) {
   return (
-    <section className="relative">
+    <section className="image-fill-polish-wrap relative overflow-hidden bg-charcoal">
       <div className="absolute inset-0">
-        <img src={image} alt="" className="w-full h-full object-cover object-top" />
+        <SafeImage src={image} alt="" className="image-fill-polish w-full h-full object-cover object-top" loading="eager" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/55 to-charcoal/80" />
       </div>
       <div className="relative container-narrow py-24 md:py-36 text-cream">
         <p className="text-ochre text-xs uppercase tracking-[0.22em] font-semibold mb-5">{eyebrow}</p>
-        <h1 className="font-display text-4xl md:text-6xl leading-[1.05] max-w-3xl">{title}</h1>
+        <h1 className="font-display text-4xl md:text-6xl leading-[1.08] md:leading-[1.05] max-w-3xl">{title}</h1>
         {intro && <p className="mt-6 text-cream/85 max-w-2xl text-lg leading-relaxed">{intro}</p>}
       </div>
     </section>

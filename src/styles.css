@@ -77,13 +77,30 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
     font-feature-settings: "liga" 1, "kern" 1, "dlig" 1;
+    text-wrap: balance;
+  }
+  p, li {
+    text-wrap: pretty;
+  }
+  a, button, input, select, textarea {
+    touch-action: manipulation;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -109,5 +126,129 @@
       var(--cream) 56px 70px
     );
     border-radius: 999px;
+  }
+}
+
+@layer components {
+  :where(a, button):focus-visible {
+    outline: 3px solid color-mix(in oklch, var(--ring) 70%, white);
+    outline-offset: 4px;
+    border-radius: 999px;
+  }
+
+  :where(a, button).rounded-full {
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease,
+      background-color 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease,
+      opacity 200ms ease;
+  }
+
+  :where(a, button).rounded-full:active {
+    transform: translateY(0) scale(0.985);
+  }
+
+  .nav-link {
+    position: relative;
+    transition: color 200ms ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.55rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    opacity: 0;
+    transform: scaleX(0.45);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  .nav-link:is(:hover, .active)::after {
+    opacity: 0.55;
+    transform: scaleX(1);
+  }
+
+  :where(div, article, figure, a, li).bg-card.border {
+    box-shadow: 0 1px 0 color-mix(in oklch, var(--charcoal) 8%, transparent);
+    transition:
+      transform 220ms ease,
+      box-shadow 220ms ease,
+      border-color 220ms ease,
+      background-color 220ms ease;
+  }
+
+  .image-polish {
+    isolation: isolate;
+    box-shadow: 0 1px 0 color-mix(in oklch, var(--charcoal) 8%, transparent);
+    transition:
+      transform 240ms ease,
+      box-shadow 240ms ease,
+      border-color 240ms ease;
+  }
+
+  .image-polish > img {
+    transform: scale(1);
+    transition:
+      transform 260ms ease,
+      filter 260ms ease;
+  }
+
+  .image-fill-polish {
+    transform: scale(1);
+    transition:
+      transform 280ms ease,
+      filter 280ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    :where(a, button).rounded-full:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 28px -22px color-mix(in oklch, var(--charcoal) 70%, transparent);
+    }
+
+    :where(div, article, figure, a, li).bg-card.border:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in oklch, var(--terracotta) 42%, var(--border));
+      box-shadow: 0 20px 45px -30px color-mix(in oklch, var(--charcoal) 70%, transparent);
+    }
+
+    .image-polish:is(.rounded-2xl, .rounded-3xl):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 48px -32px color-mix(in oklch, var(--charcoal) 72%, transparent);
+    }
+
+    .image-polish:hover > img {
+      transform: scale(1.035);
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    .image-fill-polish-wrap:hover .image-fill-polish {
+      transform: scale(1.025);
+      filter: saturate(1.03) contrast(1.02);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :where(a, button).rounded-full,
+    :where(div, article, figure, a, li).bg-card.border,
+    .image-polish,
+    .image-polish > img,
+    .image-fill-polish {
+      transition-duration: 0.01ms !important;
+    }
+
+    :where(a, button).rounded-full:is(:hover, :active),
+    :where(div, article, figure, a, li).bg-card.border:hover,
+    .image-polish:is(.rounded-2xl, .rounded-3xl):hover,
+    .image-polish:hover > img,
+    .image-fill-polish-wrap:hover .image-fill-polish {
+      transform: none !important;
+    }
   }
 }
